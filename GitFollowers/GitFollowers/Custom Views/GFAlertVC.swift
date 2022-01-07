@@ -9,17 +9,17 @@ import UIKit
 
 class GFAlertVC: UIViewController {
     
+    //MARK: - Properties
     let containerView = UIView()
     let titleLabel = GFTitleLabel(textAlign: .center, fontSize: 20)
     let messageLabel = GFBodyLabel(textAlignment: .center)
     let actionButton = GFButton(backgroundColor: .systemPink, title: "OK")
     
+    let padding: CGFloat = 20
     
     var alertTitle: String?
     var message: String?
     var buttonTitle: String?
-
-    let padding: CGFloat = 20
     
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
@@ -32,6 +32,7 @@ class GFAlertVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Visual Components
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
@@ -41,6 +42,7 @@ class GFAlertVC: UIViewController {
         configureMessageLabel()
     }
     
+    //MARK: - Public Methods
     func configureContainerView() {
         view.addSubview(containerView)
         containerView.backgroundColor = .systemBackground
