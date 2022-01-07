@@ -9,14 +9,14 @@ import UIKit
 
 class SearchVC: UIViewController, UITextFieldDelegate {
     
+    //MARK: - Properties
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
     
-    
-    //returns true if it is empty
     var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
     
+    //MARK: - Visual Components
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -31,6 +31,7 @@ class SearchVC: UIViewController, UITextFieldDelegate {
         navigationController?.isNavigationBarHidden = true
     }
     
+    //MARK: - Public Methods
     func createDismissKeyboardTapGesture() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -87,6 +88,7 @@ class SearchVC: UIViewController, UITextFieldDelegate {
     }
 }
 
+//MARK: - UITextViewDelegate
 extension SearchVC: UITextViewDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         pushFollowersListVC()

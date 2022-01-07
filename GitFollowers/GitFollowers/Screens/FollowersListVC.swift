@@ -9,9 +9,10 @@ import UIKit
 
 class FollowersListVC: UIViewController {
 
+    //MARK: - Properties
     var userName: String!
     
-    
+    //MARK: - Visual Components
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
