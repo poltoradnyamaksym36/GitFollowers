@@ -15,9 +15,7 @@ class SearchVC: UIViewController, UITextFieldDelegate {
     
     
     //returns true if it is empty
-    var isUsernameEntered: Bool {
-        return !usernameTextField.text!.isEmpty //false
-    }
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +37,11 @@ class SearchVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func pushFollowersListVC() {
-        
-        print(isUsernameEntered)
-        
         guard isUsernameEntered else {
-            print("No username")
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We need to know who to look for😀", buttonTitle: "Ok")
             return
         }
+        
         let followersListVC = FollowersListVC()
         followersListVC.userName = usernameTextField.text
         followersListVC.title = usernameTextField.text
@@ -55,7 +51,7 @@ class SearchVC: UIViewController, UITextFieldDelegate {
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = UIImage(named: "gh-logo")!
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
