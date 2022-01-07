@@ -9,6 +9,7 @@ import UIKit
 
 class GFTitleLabel: UILabel {
 
+    //MARK: - Visual Components
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -23,6 +24,7 @@ class GFTitleLabel: UILabel {
         self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
     }
     
+    //MARK: - Private Methods
     private func configure() {
         textColor = .label
         adjustsFontSizeToFitWidth = true

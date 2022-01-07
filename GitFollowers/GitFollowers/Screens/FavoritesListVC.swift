@@ -9,6 +9,7 @@ import UIKit
 
 class FavoritesListVC: UIViewController {
 
+    //MARK: - Visual Components
     override func viewDidLoad() {
         super.viewDidLoad()
     }

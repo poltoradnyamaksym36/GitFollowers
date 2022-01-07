@@ -9,6 +9,7 @@ import UIKit
 
 class GFBodyLabel: UILabel {
 
+    //MARK: - Visual Components
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -24,6 +25,7 @@ class GFBodyLabel: UILabel {
         configure()
     }
     
+    //MARK: - Private Methods
     private func configure() {
         textColor = .secondaryLabel
         font = UIFont.preferredFont(forTextStyle: .body)
