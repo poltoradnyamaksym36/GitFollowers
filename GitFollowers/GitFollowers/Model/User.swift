@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Model User
 struct User: Codable {
     var login: String
     var avatarUrl: String
