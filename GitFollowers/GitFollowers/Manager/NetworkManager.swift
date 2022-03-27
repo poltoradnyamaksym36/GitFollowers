@@ -44,9 +44,7 @@ class NetworkManager {
             } catch {
                 completed(nil, "The data received from server was invlaid. Please try again")
             }
-
         }
-        
         task.resume()
     }
     
